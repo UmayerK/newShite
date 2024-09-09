@@ -134,46 +134,46 @@ const experiences = [
 
 const projects = [
   {
-    name: "Three.js Project",
+    name: "Safebook Anti Scam AI",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "Safebook Anti Scam AI is a web app that uses AI to detect and prevent scams in real time allowing users to input a message and recieve a likelihood of it being a scam",
     tags: [
       {
         name: "react",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "python",
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "fastapi",
         color: "pink-text-gradient",
       },
     ],
     image: threejswp,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://umayer.ca",
   },
   {
-    name: "React and Three.js",
+    name: "Personal Portfolio Website",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "Personal Portfolio Website made to showcase my progression as a software engineer you might just be looking at it right now ",
     tags: [
       {
         name: "react",
         color: "blue-text-gradient",
       },
       {
-        name: "restapi",
+        name: "tailwind",
         color: "green-text-gradient",
       },
       {
-        name: "scss",
+        name: "3js",
         color: "pink-text-gradient",
       },
     ],
     image: reactandthreewp,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://umayer.ca",
   },
   {
     name: "Trip Guide",
