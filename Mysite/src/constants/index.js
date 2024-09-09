@@ -20,6 +20,7 @@ import {
   threejs2,
   vuejs,
   firebase,
+  formulae,
 } from "../assets";
 
 export const navLinks = [
@@ -178,22 +179,22 @@ const projects = [
   {
     name: "Trip Guide",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-    tags: [
+        "Contributed to the development of a low-level program for a Formula Electric race car, converting assembly code to C code.",
+      tags: [
       {
-        name: "nextjs",
+        name: "c",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "assembly",
         color: "green-text-gradient",
       },
       {
-        name: "css",
+        name: "lowlevelprogramming",
         color: "pink-text-gradient",
       },
     ],
-    image: threejswp,
+    image: formulae,
     source_code_link: "https://github.com/",
   },
  
