@@ -23,7 +23,7 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt="logo" className="w-9 h-9 object-contain" />
+          
           <p className="text-white text-[18px] font-bold cursor-pointer flex">
             Umayer &nbsp;
             <span className="sm:block hidden"></span>
@@ -44,13 +44,7 @@ const Navbar = () => {
         </ul>
 
         <div className="sm:hidden flex flex-1 justify-end items-center">
-          <img
-            src={toggle ? close : menu}
-            alt="menu"
-            className="w-[28px] h-[28px] object-contain cursor-pointer"
-            onClick={() => setToggle(!toggle)}
-          />
-
+         
           <div
             className={`${
               !toggle ? "hidden" : "flex"
