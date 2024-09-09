@@ -153,7 +153,7 @@ const projects = [
       },
     ],
     image: threejswp,
-    source_code_link: "https://umayer.ca",
+    source_code_link: "https://github.com/UmayerK/Winhacks2024-umayer",
   },
   {
     name: "Personal Portfolio Website",
@@ -177,7 +177,7 @@ const projects = [
     source_code_link: "https://umayer.ca",
   },
   {
-    name: "Trip Guide",
+    name: "FSAE Formula Electric Race Car Display",
     description:
         "Contributed to the development of a low-level program for a Formula Electric race car, converting assembly code to C code.",
       tags: [
