@@ -5,7 +5,7 @@ import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
 
-const Computers = ({ isMobile }) => {
+const Computers = ({ isMobile, isTablet }) => {
   const computer = useGLTF("./desktop_pc/scene.gltf", GLTFLoader);
 
   return (
@@ -22,9 +22,10 @@ const Computers = ({ isMobile }) => {
       <pointLight intensity={2} />
       <primitive
         object={computer.scene}
-        scale={isMobile ? 15.8 : 17.0} // Significantly increased scale values
-        position={isMobile ? [0, -3, -2.2] : [0, -2.5, -1.5]}
-        rotation={[-0.01, -0.2, -0.1]}
+        // Adjust scale: mobile (7.9), tablet (4.9), desktop (17.0)
+        scale={isMobile ? 79.9 : isTablet ? 10.9 : 17.0}
+        position={isMobile ? [-2, -1.5, 0] : [0, -2.5, 0]} // Adjust position for better alignment on mobile/tablet
+        rotation={[0, 0.1, 0]} // Adjust rotation for better alignment with the camera
       />
     </mesh>
   );
@@ -32,18 +33,32 @@ const Computers = ({ isMobile }) => {
 
 const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 500px");
-    setIsMobile(mediaQuery.matches);
-    const handleMediaQueryChange = (event) => {
-      setIsMobile(event.matches);
+    const mobileQuery = window.matchMedia("(max-width: 500px)");
+    const tabletQuery = window.matchMedia("(min-width: 501px) and (max-width: 1024px)");
 
-      return () => {
-        mediaQuery.removeEventListener("change", handleMediaQueryChange);
-      };
+    setIsMobile(mobileQuery.matches);
+    setIsTablet(tabletQuery.matches);
+
+    const handleMobileQueryChange = (event) => {
+      setIsMobile(event.matches);
+    };
+
+    const handleTabletQueryChange = (event) => {
+      setIsTablet(event.matches);
+    };
+
+    mobileQuery.addEventListener("change", handleMobileQueryChange);
+    tabletQuery.addEventListener("change", handleTabletQueryChange);
+
+    return () => {
+      mobileQuery.removeEventListener("change", handleMobileQueryChange);
+      tabletQuery.removeEventListener("change", handleTabletQueryChange);
     };
   }, []);
+
   return (
     <Canvas
       frameloop="demand"
@@ -58,7 +73,7 @@ const ComputersCanvas = () => {
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
-        <Computers isMobile={isMobile} />
+        <Computers isMobile={isMobile} isTablet={isTablet} />
       </Suspense>
 
       <Preload all />
